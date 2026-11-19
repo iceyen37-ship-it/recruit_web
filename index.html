@@ -60,10 +60,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .bar nav a.bar-cta, .bar nav a.bar-cta:hover { color: #FFFEFB; text-decoration: none; }
 .bar-cta:hover { background: var(--brand-ink); }
 .bar-cta i { width: 42px; height: 42px; border-radius: 50%; background: #FFFEFB; color: #161412; display: grid; place-items: center; font-style: normal; font-family: var(--latin); font-weight: 700; font-size: 20px; }
+.cta-short { display: none; }
+@media (max-width: 520px) { .cta-long { display: none; } .cta-short { display: inline; } }
 .bar nav a.on { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
 @media (max-width: 900px) {
   .bar .links { overflow-x: auto; gap: 20px; scrollbar-width: none; flex: 1; min-width: 0; padding-block: 8px; }
   .bar .links::-webkit-scrollbar { display: none; }
+  .bar .links { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 36px), transparent); padding-right: 28px; }
   .bar-cta { font-size: 14px; padding-left: 14px; gap: 8px; }
   .bar-cta i { width: 32px; height: 32px; font-size: 16px; }
 }
@@ -261,7 +264,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .apply .en { font-family: var(--latin); font-weight: 600; letter-spacing: .14em; font-size: 14px; color: var(--brand-ink); }
 .steps { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--hair); }
 .steps li { display: flex; gap: 18px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--hair); font-size: 16px; font-weight: 500; }
-.steps b { font-family: var(--latin); font-weight: 600; font-size: 24px; width: 32px; }
+.steps b { font-family: var(--latin); font-weight: 600; font-size: 24px; width: 32px; flex: 0 0 32px; }
 .apply-note { font-size: 13.5px; color: var(--muted); margin-top: 18px; }
 .qr { text-align: center; border-left: 1px solid var(--hair); padding-left: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .qr img { width: 190px; }
@@ -305,7 +308,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
         <a class="lk" href="#rights">參與權益</a>
         <a class="lk" href="#contact">聯絡我們</a>
       </div>
-      <a class="bar-cta" href="#apply">參與體驗測試 <i aria-hidden="true">→</i></a>
+      <a class="bar-cta" href="#apply"><span class="cta-long">參與體驗測試</span><span class="cta-short">立即報名</span> <i aria-hidden="true">→</i></a>
     </nav>
   </div>
 </div>
