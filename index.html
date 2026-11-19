@@ -146,8 +146,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .slides { position: relative; margin-top: 22px; min-height: 360px; }
 .slide { display: grid; grid-template-columns: 210px 1fr; gap: 36px; align-items: center; }
 .slide[hidden] { display: none !important; }
-.slide-img { background: linear-gradient(170deg, #FFFFFF 0%, #FAF9F6 55%, #EDEAE4 100%); border: 1px solid #E4E0D8; border-radius: 22px; padding: 18px 18px 0; display: flex; justify-content: center; overflow: hidden; height: 330px; }
-.slide-img img { width: auto; height: 100%; max-width: 100%; object-fit: contain; object-position: top; }
+.slide-img { display: flex; justify-content: center; height: 330px; }
+.slide-img img { width: auto; height: 100%; max-width: 100%; object-fit: contain; object-position: center; filter: drop-shadow(0 14px 24px rgba(28,26,24,.16)); }
 .slide-no { display: flex; align-items: baseline; gap: 14px; }
 .slide-no b { font-family: var(--latin); font-size: calc(64px * var(--fs)); font-weight: 600; line-height: 1; letter-spacing: .02em; }
 .slide-no span { font-family: var(--latin); font-weight: 700; font-size: calc(16px * var(--fs)); letter-spacing: .1em; line-height: 1.2; }
