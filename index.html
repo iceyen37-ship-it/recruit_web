@@ -112,6 +112,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* section label */
 .label { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; font-family: var(--latin); font-weight: 700; font-size: calc(clamp(17px, 1.6vw, 22px) * var(--fs)); letter-spacing: .14em; padding-bottom: 14px; border-bottom: 2px dotted var(--hair); margin-bottom: 40px; }
+.label { color: var(--brand); }
 .label i { width: 1em; height: 1em; flex: 0 0 auto; }
 .label small { font-family: var(--zh); font-weight: 500; letter-spacing: .06em; color: var(--muted); font-size: calc(clamp(14px, 1.2vw, 17px) * var(--fs)); }
 
@@ -196,7 +197,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 /* features with vertical side label */
 .side-band { display: grid; grid-template-columns: 64px 1fr; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
 .side-label { border-right: 1px solid var(--hair); display: flex; justify-content: center; padding-top: 40px; }
-.side-label span { writing-mode: vertical-rl; font-family: var(--latin); font-weight: 700; letter-spacing: .3em; font-size: calc(clamp(15px, 1.4vw, 19px) * var(--fs)); }
+.side-label span { color: var(--brand); writing-mode: vertical-rl; font-family: var(--latin); font-weight: 700; letter-spacing: .3em; font-size: calc(clamp(15px, 1.4vw, 19px) * var(--fs)); }
 .side-body { padding-block: 64px 80px; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); min-width: 0; }
 .side-body .inner { max-width: calc(var(--wrap) - 100px); margin: 0 auto; }
 .feat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
