@@ -275,6 +275,23 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .right b { font-family: var(--latin); font-weight: 600; font-size: calc(13px * var(--fs)); letter-spacing: .14em; color: var(--muted); }
 .right h3 { font-size: calc(17px * var(--fs)); margin-top: 4px; }
 .right p { font-size: calc(14px * var(--fs)); color: var(--muted); margin-top: 6px; }
+.lead-in { max-width: 44em; font-size: calc(clamp(16px, 1.3vw, 19px) * var(--fs)); line-height: 1.9; margin: -8px 0 36px; color: var(--ink); }
+.mission { background: var(--white); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+.mission-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 4vw, 72px); align-items: center; }
+.mission-title { font-size: calc(clamp(24px, 2.4vw, 38px) * var(--fs)); line-height: 1.55; letter-spacing: .02em; }
+.mission-title em { font-style: normal; color: var(--brand); }
+@media (max-width: 560px) { .mission-title br { display: none; } .mission-title em { display: block; margin-top: 6px; } }
+.mission-text { margin-top: 22px; font-size: calc(clamp(15px, 1.15vw, 18px) * var(--fs)); line-height: 2; color: var(--muted); max-width: 40em; }
+.mission-art { width: 100%; height: auto; }
+.pledges { list-style: none; padding: 0; margin: 48px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--hair); }
+.pledges li { padding: 22px 22px 4px 0; }
+.pledges li + li { padding-left: 22px; border-left: 1px solid var(--hair); }
+.pledges b { display: flex; align-items: center; gap: 8px; font-size: calc(17px * var(--fs)); }
+.pledges b::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); }
+.pledges span { display: block; margin-top: 6px; font-size: calc(14.5px * var(--fs)); color: var(--muted); line-height: 1.8; }
+@media (max-width: 860px) { .mission-grid, .pledges { grid-template-columns: 1fr; } .pledges li + li { padding-left: 0; border-left: 0; border-top: 1px solid var(--hair); } }
+.right-art { display: block; width: clamp(90px, 7vw, 120px); height: auto; margin-bottom: 14px; }
+.apply-lead { margin-top: 10px; font-size: calc(clamp(15px, 1.2vw, 18px) * var(--fs)); color: var(--muted); }
 @media (max-width: 860px) { .rights { grid-template-columns: 1fr 1fr; } .right:nth-child(3) { border-left: 0; } .right:nth-child(n+3) { border-top: 1px solid var(--hair); } }
 @media (max-width: 480px) { .rights { grid-template-columns: 1fr; } .right + .right { border-left: 0; border-top: 1px solid var(--hair); } }
 
@@ -372,7 +389,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
           <span class="dl-qr"><img src="assets/download-qr.png" alt="安心呷 App 下載說明頁的 QR code" width="112" height="112"></span>
         </a>
         </div>
-        <p class="hero-text">安心呷是協助咀嚼吞嚥困難照護的 App。幫家人、看護與照服員看懂食物該多軟、記下每一餐、留住醫生的叮嚀；語言治療師、營養師也能隨時查看長輩在家的飲食紀錄。<br>現在，我們正在招募 30 位營養師、語言治療師與照顧者，一起試用並給我們建議。</p>
+        <p class="hero-text">每一餐，都可能是照顧者最擔心的時刻。安心呷是為咀嚼吞嚥困難照護而做的 App：幫家人、看護與照服員看懂食物該多軟、記下每一餐、留住醫師的叮嚀；也讓營養師、語言治療師看得見長輩在家怎麼吃。<br>我們想邀請 30 位第一線的營養師、語言治療師與照顧者，用您的經驗，一起把它打磨成真正幫得上忙的工具。</p>
         <div class="hero-cta">
           <a class="pill solid" href="#apply">參與體驗測試 <span class="arr">→</span></a>
           <a class="pill" href="#research">關於研究，想知道更多 <span class="arr">↓</span></a>
@@ -422,7 +439,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
   <section class="band" id="problems">
     <div class="wrap">
-      <p class="label"><i><svg viewBox="0 0 18 18"><path d="M3 2 v15" stroke="#1C1A18" stroke-width="1.6"/><path d="M3 2 h11 l-3 4 l3 4 h-11 z" fill="#FF5100"/></svg></i>PROBLEM <small>我們在現場發現</small></p>
+      <p class="label"><i><svg viewBox="0 0 18 18"><path d="M3 2 v15" stroke="#1C1A18" stroke-width="1.6"/><path d="M3 2 h11 l-3 4 l3 4 h-11 z" fill="#FF5100"/></svg></i>PROBLEM <small>我們聽見的照顧日常</small></p>
+      <p class="lead-in">這些困擾，不是因為誰做得不夠好。每一位照顧者、每一位醫療人員都已經很努力了，只是家裡和診間之間，少了一個共同的語言。</p>
       <div class="cols">
         <div>
           <div class="col-head"><span class="who">CAREGIVERS</span><h3>照顧者</h3></div>
@@ -452,6 +470,25 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <span><b>#</b>IDDSI<b>#</b>咀嚼吞嚥<b>#</b>營養師<b>#</b>語言治療師<b>#</b>照顧者<b>#</b>外籍看護<b>#</b>長照<b>#</b>居家照護<b>#</b>質地分級&nbsp;</span><span><b>#</b>IDDSI<b>#</b>咀嚼吞嚥<b>#</b>營養師<b>#</b>語言治療師<b>#</b>照顧者<b>#</b>外籍看護<b>#</b>長照<b>#</b>居家照護<b>#</b>質地分級&nbsp;</span>
   </div></div>
 
+
+  <section class="band mission" id="mission">
+    <div class="wrap">
+      <p class="label">OUR MISSION <small>我們想一起做的事</small></p>
+      <div class="mission-grid">
+        <div>
+          <h2 class="mission-title">希望攜手台灣的咀嚼吞嚥照護現場，<br><em>讓每一餐都吃得安全、吃得安心。</em></h2>
+          <p class="mission-text">越來越多長輩面臨咀嚼吞嚥的困難，而照顧他們的，常是蠟燭兩頭燒的家人、語言不通的看護，和門診時間有限的醫療人員。我們相信，好的照護不該只靠經驗與運氣。安心呷想成為家裡和診間之間的那座橋：讓專業的建議被聽懂、被做到，讓照顧的人少一點擔心，也讓長輩保有好好吃飯的尊嚴與樂趣。</p>
+        </div>
+        <svg class="mission-art" viewBox="0 0 420 150" role="img" aria-label="插畫：從家裡到診間，一碗安心的飯把照顧者與醫療人員連在一起" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 140 H414"/><path d="M24 140 V86 L74 46 L124 86 V140" fill="#FFFEFB"/><path d="M14 92 L74 40 L134 92"/><rect x="60" y="104" width="28" height="36" rx="2" fill="#FFFEFB"/><rect x="36" y="94" width="16" height="14" rx="2" fill="#FFAD2E"/><rect x="296" y="62" width="100" height="78" rx="4" fill="#FFFEFB"/><rect x="330" y="104" width="32" height="36" rx="2" fill="#FFFEFB"/><circle cx="346" cy="84" r="12" fill="#FF5100" stroke="none"/><path d="M346 77 v14 M339 84 h14" stroke="#FFFEFB" stroke-width="3"/><path d="M124 70 Q210 -10 296 70" stroke="#FF5100" stroke-dasharray="4 6"/><path d="M180 118 a30 20 0 0 0 60 0 z" fill="#FFAD2E"/><path d="M174 118 h72"/><path d="M196 104 q-5 -8 0 -16 M210 102 q-5 -8 0 -16 M224 104 q-5 -8 0 -16"/><path d="M210 22 c-4 -8 -18 -8 -18 3 c0 8 10 13 18 20 c8 -7 18 -12 18 -20 c0 -11 -14 -11 -18 -3 z" fill="#FF5100" stroke="none"/></svg>
+      </div>
+      <ul class="pledges">
+        <li><b>從照顧現場出發</b><span>每個功能都來自照顧者與醫療人員真實說出口的困擾。</span></li>
+        <li><b>和專業一起打造</b><span>邀請營養師、語言治療師一起檢視內容，讓建議正確又好懂。</span></li>
+        <li><b>讓照顧不再孤單</b><span>家人、看護與醫療人員看著同一份紀錄，一起照顧同一位長輩。</span></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="side-band" id="features">
     <div class="side-label"><span>FEATURES</span></div>
     <div class="side-body"><div class="inner">
@@ -469,11 +506,11 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   <section class="band" id="research">
     <div class="wrap">
       <p class="label">RESEARCH <small>研究說明</small></p>
-      <p class="research-text">本研究由國立臺灣科技大學設計系與臺北醫學大學高齡營養研究中心合作進行，邀請醫療專業人員與照顧者實際操作 App，蒐集使用經驗，作為下一版修正的依據。</p>
+      <p class="research-text">本研究由國立臺灣科技大學設計系與臺北醫學大學高齡營養研究中心合作進行，我們不想閉門造車，而是邀請真正在第一線照顧與衛教的您，實際操作 App，告訴我們哪裡好用、哪裡卡住，讓下一版更貼近您的日常。</p>
       <div class="aims">
-        <div class="aim"><b class="latin">01</b><svg class="aim-scene" viewBox="0 0 160 96" role="img" aria-label="插畫：研究人員在旁觀察參與者操作手機" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 90 H156"/><circle cx="40" cy="50" r="11" fill="#FFFEFB"/><path d="M22 90 q0 -20 18 -22 q18 2 18 22" fill="#FFFEFB"/><rect x="56" y="36" width="20" height="34" rx="4" fill="#FFFEFB"/><rect x="59" y="41" width="14" height="22" rx="1" fill="#FFAD2E" stroke="none"/><path d="M44 72 l14 -6"/><circle cx="116" cy="46" r="10" fill="#FFFEFB"/><path d="M98 90 q0 -20 18 -22 q18 2 18 22" fill="#1C1A18"/><rect x="128" y="60" width="18" height="24" rx="2" fill="#FFFEFB"/><path d="M132 68 h10 M132 74 h7"/><path d="M80 26 q14 -10 28 0" stroke-dasharray="2 3"/><text x="66" y="30" font-size="16" font-weight="700" fill="#FF5100" stroke="none" text-anchor="middle">?</text></svg><h3>看見真實的使用經驗</h3><p>觀察您在模擬情境中操作 App 的過程，找出卡住、看不懂的地方。</p></div>
+        <div class="aim"><b class="latin">01</b><svg class="aim-scene" viewBox="0 0 160 96" role="img" aria-label="插畫：研究人員在旁觀察參與者操作手機" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 90 H156"/><circle cx="40" cy="50" r="11" fill="#FFFEFB"/><path d="M22 90 q0 -20 18 -22 q18 2 18 22" fill="#FFFEFB"/><rect x="56" y="36" width="20" height="34" rx="4" fill="#FFFEFB"/><rect x="59" y="41" width="14" height="22" rx="1" fill="#FFAD2E" stroke="none"/><path d="M44 72 l14 -6"/><circle cx="116" cy="46" r="10" fill="#FFFEFB"/><path d="M98 90 q0 -20 18 -22 q18 2 18 22" fill="#1C1A18"/><rect x="128" y="60" width="18" height="24" rx="2" fill="#FFFEFB"/><path d="M132 68 h10 M132 74 h7"/><path d="M80 26 q14 -10 28 0" stroke-dasharray="2 3"/><text x="66" y="30" font-size="16" font-weight="700" fill="#FF5100" stroke="none" text-anchor="middle">?</text></svg><h3>看見真實的使用經驗</h3><p>陪您在模擬情境中操作 App，找出卡住、看不懂的地方。卡住不是您的問題，是我們該改的地方。</p></div>
         <div class="aim"><b class="latin">02</b><svg class="aim-scene" viewBox="0 0 160 96" role="img" aria-label="插畫：專業人員拿著檢核表檢查質地示範" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 90 H156"/><circle cx="36" cy="50" r="11" fill="#FFFEFB"/><path d="M18 90 q0 -20 18 -22 q18 2 18 22" fill="#1C1A18"/><rect x="64" y="22" width="40" height="54" rx="4" fill="#FFFEFB"/><rect x="76" y="18" width="16" height="8" rx="2" fill="#1C1A18"/><path d="M71 38 l3 3 l6 -6 M84 38 h14 M71 52 l3 3 l6 -6 M84 52 h14 M71 66 l3 3 l6 -6 M84 66 h10"/><path d="M50 72 l14 -10"/><path d="M118 70 a16 10 0 0 0 32 0 z" fill="#FFFEFB"/><ellipse cx="134" cy="70" rx="14" ry="2.5" fill="#FFAD2E"/><path d="M126 60 L144 36"/><ellipse cx="146" cy="33" rx="4" ry="3" fill="#FFFEFB"/></svg><h3>檢查內容是否正確好懂</h3><p>請醫療專業人員檢視質地分級、示範與衛教內容的正確性。</p></div>
-        <div class="aim"><b class="latin">03</b><svg class="aim-scene" viewBox="0 0 160 96" role="img" aria-label="插畫：家人、看護與醫療人員共享同一份紀錄" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 90 H156"/><circle cx="24" cy="50" r="11" fill="#FFFEFB"/><path d="M6 90 q0 -20 18 -22 q18 2 18 22" fill="#FFFEFB"/><circle cx="136" cy="50" r="11" fill="#FFFEFB"/><path d="M118 90 q0 -20 18 -22 q18 2 18 22" fill="#1C1A18"/><rect x="64" y="40" width="32" height="40" rx="4" fill="#FFAD2E"/><path d="M71 52 h18 M71 60 h18 M71 68 h12" stroke="#1C1A18"/><path d="M40 48 q12 -14 24 -2 M120 48 q-12 -14 -24 -2" stroke-dasharray="2 3"/><circle cx="80" cy="18" r="9" fill="#FFFEFB"/><path d="M76 18 h8 M80 14 v8" stroke="#FF5100" stroke-width="2"/><path d="M80 27 v12" stroke-dasharray="2 3"/></svg><h3>讓照護資訊傳得更完整</h3><p>依您的回饋改版，讓醫囑與飲食紀錄在家人、看護與醫療人員之間傳遞。</p></div>
+        <div class="aim"><b class="latin">03</b><svg class="aim-scene" viewBox="0 0 160 96" role="img" aria-label="插畫：家人、看護與醫療人員共享同一份紀錄" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 90 H156"/><circle cx="24" cy="50" r="11" fill="#FFFEFB"/><path d="M6 90 q0 -20 18 -22 q18 2 18 22" fill="#FFFEFB"/><circle cx="136" cy="50" r="11" fill="#FFFEFB"/><path d="M118 90 q0 -20 18 -22 q18 2 18 22" fill="#1C1A18"/><rect x="64" y="40" width="32" height="40" rx="4" fill="#FFAD2E"/><path d="M71 52 h18 M71 60 h18 M71 68 h12" stroke="#1C1A18"/><path d="M40 48 q12 -14 24 -2 M120 48 q-12 -14 -24 -2" stroke-dasharray="2 3"/><circle cx="80" cy="18" r="9" fill="#FFFEFB"/><path d="M76 18 h8 M80 14 v8" stroke="#FF5100" stroke-width="2"/><path d="M80 27 v12" stroke-dasharray="2 3"/></svg><h3>讓照護資訊傳得更完整</h3><p>依您的回饋改版，讓醫囑與飲食紀錄在家人、看護與醫療人員之間順利傳遞，不再漏接。</p></div>
       </div>
     </div>
   </section>
@@ -529,12 +566,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
   <section class="band" id="rights" style="padding-top:0">
     <div class="wrap">
-      <p class="label">YOUR RIGHTS <small>參與權益與資料處理</small></p>
+      <p class="label">YOUR RIGHTS <small>我們對您的承諾</small></p>
       <div class="rights">
-        <div class="right"><b>01</b><h3>完全自願</h3><p>可以隨時暫停或退出，不需說明理由，不影響任何權益。</p></div>
-        <div class="right"><b>02</b><h3>錄影與錄音</h3><p>只錄手機畫面與聲音，僅用於研究分析。</p></div>
-        <div class="right"><b>03</b><h3>資料保護</h3><p>以代碼整理，研究結果以統計或匿名方式呈現。</p></div>
-        <div class="right"><b>04</b><h3>搶先免費試用</h3><p>比大家更早用到完整功能，測試期間免費使用。</p></div>
+        <div class="right"><svg class="right-art" viewBox="0 0 120 80" role="img" aria-label="插畫：可以隨時按下暫停" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 76 H114"/><circle cx="60" cy="40" r="26" fill="#FFFEFB"/><rect x="50" y="28" width="7" height="24" rx="2" fill="#FF5100" stroke="none"/><rect x="63" y="28" width="7" height="24" rx="2" fill="#FF5100" stroke="none"/><path d="M98 30 q8 10 0 20 M22 30 q-8 10 0 20"/></svg><b>01</b><h3>完全自願</h3><p>可以隨時暫停或退出，不需說明理由，不影響任何權益。您的時間與感受，永遠比研究重要。</p></div>
+        <div class="right"><svg class="right-art" viewBox="0 0 120 80" role="img" aria-label="插畫：只錄手機畫面與聲音" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 76 H114"/><rect x="30" y="10" width="30" height="58" rx="6" fill="#FFFEFB"/><rect x="35" y="18" width="20" height="38" rx="2" fill="#FFAD2E" stroke="none"/><circle cx="54" cy="23" r="3" fill="#FF5100" stroke="none"/><rect x="78" y="26" width="14" height="24" rx="7" fill="#FFFEFB"/><path d="M72 42 q0 14 13 14 q13 0 13 -14 M85 56 v10 M78 68 h14"/></svg><b>02</b><h3>錄影與錄音</h3><p>只錄手機畫面與聲音，僅用於研究分析。</p></div>
+        <div class="right"><svg class="right-art" viewBox="0 0 120 80" role="img" aria-label="插畫：資料上鎖保護" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 76 H114"/><rect x="24" y="12" width="40" height="54" rx="4" fill="#FFFEFB"/><path d="M32 24 h24 M32 32 h24 M32 40 h16"/><path d="M76 40 v-8 a10 10 0 0 1 20 0 v8"/><rect x="70" y="40" width="32" height="26" rx="4" fill="#FFAD2E"/><circle cx="86" cy="51" r="3" fill="#1C1A18" stroke="none"/><path d="M86 54 v6"/></svg><b>03</b><h3>資料保護</h3><p>以代碼整理，研究結果以統計或匿名方式呈現。</p></div>
+        <div class="right"><svg class="right-art" viewBox="0 0 120 80" role="img" aria-label="插畫：搶先收到的禮物" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 76 H114"/><rect x="34" y="36" width="52" height="34" rx="3" fill="#FFFEFB"/><rect x="30" y="28" width="60" height="12" rx="3" fill="#FFAD2E"/><path d="M60 28 v42" stroke="#FF5100" stroke-width="3"/><path d="M60 28 q-14 -16 -18 -4 q-2 6 18 4 q14 -16 18 -4 q2 6 -18 4"/><path d="M98 14 l2 6 l6 2 l-6 2 l-2 6 l-2 -6 l-6 -2 l6 -2 z M20 18 l1.5 4 l4 1.5 l-4 1.5 l-1.5 4 l-1.5 -4 l-4 -1.5 l4 -1.5 z" fill="#FF5100" stroke="none"/></svg><b>04</b><h3>搶先免費試用</h3><p>比大家更早用到完整功能，測試期間免費使用。您的建議，會直接變成下一版的樣子。</p></div>
       </div>
     </div>
   </section>
@@ -546,7 +583,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <div class="apply">
         <div>
           <p class="en">CALL FOR PARTICIPANTS</p>
-          <h2>邀請您一起讓安心呷更好</h2>
+          <h2>邀請您，一起讓照顧這件事更輕鬆</h2>
+          <p class="apply-lead">您的一句建議，可能就讓另一個家庭的餐桌多一分安心。</p>
           <ol class="steps">
             <li><b>1</b>填寫「安心呷研究參與意願登記表」，約 2 分鐘</li>
             <li><b>2</b>研究團隊以 Email 與您約時間與地點</li>
