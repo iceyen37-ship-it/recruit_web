@@ -232,7 +232,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .e-card dd { margin: 4px 0 0; font-size: calc(15px * var(--fs)); }
 .note { margin-top: 22px; font-size: calc(14px * var(--fs)); color: var(--muted); }
 .aims { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--hair); margin-top: 8px; }
-.aim { padding: 22px 22px 6px 0; min-width: 0; }
+.aim { padding: 22px 22px 6px 0; min-width: 0; display: grid; grid-template-columns: auto 1fr; align-items: start; align-content: start; }
+.aim > b { grid-column: 1; }
+.aim-scene { grid-column: 2; justify-self: end; width: clamp(130px, 11vw, 190px); height: auto; margin-bottom: 8px; }
+.aim > h3, .aim > p { grid-column: 1 / -1; }
 .aim + .aim { padding-left: 22px; border-left: 1px solid var(--hair); }
 .aim b { font-family: var(--latin); font-weight: 600; font-size: calc(30px * var(--fs)); }
 .aim h3 { font-size: calc(16.5px * var(--fs)); margin-top: 6px; }
@@ -468,9 +471,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <p class="label">RESEARCH <small>研究說明</small></p>
       <p class="research-text">本研究由國立臺灣科技大學設計系與臺北醫學大學高齡營養研究中心合作進行，邀請醫療專業人員與照顧者實際操作 App，蒐集使用經驗，作為下一版修正的依據。</p>
       <div class="aims">
-        <div class="aim"><b class="latin">01</b><h3>看見真實的使用經驗</h3><p>觀察您在模擬情境中操作 App 的過程，找出卡住、看不懂的地方。</p></div>
-        <div class="aim"><b class="latin">02</b><h3>檢查內容是否正確好懂</h3><p>請醫療專業人員檢視質地分級、示範與衛教內容的正確性。</p></div>
-        <div class="aim"><b class="latin">03</b><h3>讓照護資訊傳得更完整</h3><p>依您的回饋改版，讓醫囑與飲食紀錄在家人、看護與醫療人員之間傳遞。</p></div>
+        <div class="aim"><b class="latin">01</b><svg class="aim-scene" viewBox="0 0 160 96" role="img" aria-label="插畫：研究人員在旁觀察參與者操作手機" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 90 H156"/><circle cx="40" cy="50" r="11" fill="#FFFEFB"/><path d="M22 90 q0 -20 18 -22 q18 2 18 22" fill="#FFFEFB"/><rect x="56" y="36" width="20" height="34" rx="4" fill="#FFFEFB"/><rect x="59" y="41" width="14" height="22" rx="1" fill="#FFAD2E" stroke="none"/><path d="M44 72 l14 -6"/><circle cx="116" cy="46" r="10" fill="#FFFEFB"/><path d="M98 90 q0 -20 18 -22 q18 2 18 22" fill="#1C1A18"/><rect x="128" y="60" width="18" height="24" rx="2" fill="#FFFEFB"/><path d="M132 68 h10 M132 74 h7"/><path d="M80 26 q14 -10 28 0" stroke-dasharray="2 3"/><text x="66" y="30" font-size="16" font-weight="700" fill="#FF5100" stroke="none" text-anchor="middle">?</text></svg><h3>看見真實的使用經驗</h3><p>觀察您在模擬情境中操作 App 的過程，找出卡住、看不懂的地方。</p></div>
+        <div class="aim"><b class="latin">02</b><svg class="aim-scene" viewBox="0 0 160 96" role="img" aria-label="插畫：專業人員拿著檢核表檢查質地示範" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 90 H156"/><circle cx="36" cy="50" r="11" fill="#FFFEFB"/><path d="M18 90 q0 -20 18 -22 q18 2 18 22" fill="#1C1A18"/><rect x="64" y="22" width="40" height="54" rx="4" fill="#FFFEFB"/><rect x="76" y="18" width="16" height="8" rx="2" fill="#1C1A18"/><path d="M71 38 l3 3 l6 -6 M84 38 h14 M71 52 l3 3 l6 -6 M84 52 h14 M71 66 l3 3 l6 -6 M84 66 h10"/><path d="M50 72 l14 -10"/><path d="M118 70 a16 10 0 0 0 32 0 z" fill="#FFFEFB"/><ellipse cx="134" cy="70" rx="14" ry="2.5" fill="#FFAD2E"/><path d="M126 60 L144 36"/><ellipse cx="146" cy="33" rx="4" ry="3" fill="#FFFEFB"/></svg><h3>檢查內容是否正確好懂</h3><p>請醫療專業人員檢視質地分級、示範與衛教內容的正確性。</p></div>
+        <div class="aim"><b class="latin">03</b><svg class="aim-scene" viewBox="0 0 160 96" role="img" aria-label="插畫：家人、看護與醫療人員共享同一份紀錄" fill="none" stroke="#1C1A18" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 90 H156"/><circle cx="24" cy="50" r="11" fill="#FFFEFB"/><path d="M6 90 q0 -20 18 -22 q18 2 18 22" fill="#FFFEFB"/><circle cx="136" cy="50" r="11" fill="#FFFEFB"/><path d="M118 90 q0 -20 18 -22 q18 2 18 22" fill="#1C1A18"/><rect x="64" y="40" width="32" height="40" rx="4" fill="#FFAD2E"/><path d="M71 52 h18 M71 60 h18 M71 68 h12" stroke="#1C1A18"/><path d="M40 48 q12 -14 24 -2 M120 48 q-12 -14 -24 -2" stroke-dasharray="2 3"/><circle cx="80" cy="18" r="9" fill="#FFFEFB"/><path d="M76 18 h8 M80 14 v8" stroke="#FF5100" stroke-width="2"/><path d="M80 27 v12" stroke-dasharray="2 3"/></svg><h3>讓照護資訊傳得更完整</h3><p>依您的回饋改版，讓醫囑與飲食紀錄在家人、看護與醫療人員之間傳遞。</p></div>
       </div>
     </div>
   </section>
