@@ -200,20 +200,23 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .side-label span { color: var(--brand); writing-mode: vertical-rl; font-family: var(--latin); font-weight: 700; letter-spacing: .3em; font-size: calc(clamp(15px, 1.4vw, 19px) * var(--fs)); }
 .side-body { padding-block: 64px 80px; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); min-width: 0; }
 .side-body .inner { max-width: calc(var(--wrap) - 100px); margin: 0 auto; }
-.feat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-.feat { display: grid; grid-template-columns: 22px 1fr; gap: 8px; min-width: 0; }
-.feat-date { writing-mode: vertical-rl; font-family: var(--latin); font-size: calc(13px * var(--fs)); font-weight: 600; letter-spacing: .14em; color: var(--muted); padding-top: 4px; }
-.feat-img { height: 240px; display: flex; justify-content: center; align-items: flex-start; padding-top: 8px; }
-.feat-img img { width: auto; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 20px rgba(28,26,24,.16)); }
-.feat-card { background: var(--white); border: 1px solid var(--hair); border-radius: 10px; padding: 18px 18px 16px; margin: -36px 10px 0; position: relative; }
-.feat-card .k { font-size: calc(12.5px * var(--fs)); font-weight: 700; display: flex; align-items: center; gap: 6px; }
-.feat-card .k::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
-.feat-card h3 { font-size: calc(18px * var(--fs)); margin-top: 6px; line-height: 1.5; }
-.feat-card p { font-size: calc(13.5px * var(--fs)); color: var(--muted); margin-top: 6px; line-height: 1.75; }
+.feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 2vw, 32px); }
+.feat { display: grid; grid-template-columns: minmax(130px, 34%) 1fr; align-items: center; gap: clamp(20px, 2.4vw, 40px); background: var(--white); border: 1px solid var(--hair); border-radius: 24px; padding: clamp(24px, 2.6vw, 40px); position: relative; overflow: hidden; min-width: 0; }
+.feat::after { content: ""; position: absolute; left: -40px; bottom: -60px; width: 55%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(255,81,0,.12), rgba(255,81,0,0) 70%); pointer-events: none; }
+.feat-img { position: relative; z-index: 1; display: flex; justify-content: center; }
+.feat-img img { width: 100%; max-width: 190px; height: auto; filter: drop-shadow(0 16px 24px rgba(28,26,24,.18)); }
+.feat-body { position: relative; z-index: 1; min-width: 0; }
+.feat-no { display: flex; align-items: baseline; gap: 10px; font-family: var(--latin); font-weight: 700; letter-spacing: .14em; font-size: calc(12px * var(--fs)); color: var(--muted); padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--hair); }
+.feat-no b { font-size: calc(clamp(34px, 3.4vw, 52px) * var(--fs)); line-height: 1; letter-spacing: 0; color: var(--brand); }
+.feat-body .k { font-size: calc(14px * var(--fs)); font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.feat-body .k::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--brand); }
+.feat-body h3 { font-size: calc(clamp(20px, 1.8vw, 26px) * var(--fs)); margin-top: 6px; line-height: 1.4; }
+.feat-body > p:not(.k):not(.hash):not(.feat-no) { font-size: calc(15px * var(--fs)); color: var(--muted); margin-top: 10px; line-height: 1.8; }
+.feat-body .hash span { background: var(--paper, #F4F2EE); border: 1px solid var(--hair); border-radius: 999px; padding: 3px 12px; }
 .hash { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 10px; font-size: calc(12.5px * var(--fs)); color: var(--muted); }
 .lang-note { margin-top: 40px; font-size: calc(14px * var(--fs)); color: var(--muted); }
-@media (max-width: 1000px) { .feat-grid { grid-template-columns: 1fr 1fr; row-gap: 40px; } }
-@media (max-width: 560px) { .feat-grid { grid-template-columns: 1fr; } .side-band { grid-template-columns: 40px 1fr; } }
+@media (max-width: 1080px) { .feat-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .feat { grid-template-columns: 1fr; text-align: left; } .feat-img img { max-width: 160px; } .side-band { grid-template-columns: 40px 1fr; } }
 
 /* eligibility */
 .elig { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
@@ -449,10 +452,10 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <div class="side-body"><div class="inner">
       <p class="label" style="margin-bottom:32px">FOUR FEATURES <small>四個分頁，照顧的大小事都記得</small></p>
       <div class="feat-grid">
-        <article class="feat"><p class="feat-date">01 TEXTURE</p><div><div class="feat-img"><img src="assets/feature-texture.png" alt="質地卡畫面" width="128" height="267" loading="lazy"></div><div class="feat-card"><p class="k">質地卡</p><h3>看懂 IDDSI 等級</h3><p>IDDSI Level 1–7 影片教學，附叉子、湯匙測試示範。</p><p class="hash"><span>#在家自己測稠度</span><span>#衛教說一次就懂</span></p></div></div></article>
-        <article class="feat"><p class="feat-date">02 RECORDS</p><div><div class="feat-img"><img src="assets/feature-records.png" alt="紀錄冊畫面" width="128" height="267" loading="lazy"></div><div class="feat-card"><p class="k">紀錄冊</p><h3>每一餐都有紀錄</h3><p>吃了什麼、喝多少水，以及體重、體溫、血壓、血糖。</p><p class="hash"><span>#交班不用口頭說</span><span>#看見居家飲食</span></p></div></div></article>
-        <article class="feat"><p class="feat-date">03 VISITS</p><div><div class="feat-img"><img src="assets/feature-visits.png" alt="安心錄畫面" width="128" height="267" loading="lazy"></div><div class="feat-card"><p class="k">安心錄</p><h3>醫囑不再忘</h3><p>記下看診院所、醫師與醫囑，回診前通知全家。</p><p class="hash"><span>#醫囑隨時查</span><span>#追蹤一目了然</span></p></div></div></article>
-        <article class="feat"><p class="feat-date">04 TEAM</p><div><div class="feat-img"><img src="assets/feature-team.png" alt="長輩卡畫面" width="128" height="267" loading="lazy"></div><div class="feat-card"><p class="k">長輩卡</p><h3>照護團隊一致</h3><p>用專屬邀請碼，把家人、看護與醫療人員拉進同一個團隊。</p><p class="hash"><span>#全家同一個等級</span><span>#共享紀錄與照片</span></p></div></div></article>
+        <article class="feat"><div class="feat-img"><img src="assets/feature-texture.png" alt="質地卡畫面" width="190" height="400" loading="lazy"></div><div class="feat-body"><p class="feat-no"><b>01</b>TEXTURE</p><p class="k">質地卡</p><h3>看懂 IDDSI 等級</h3><p>IDDSI Level 1–7 影片教學，附叉子、湯匙測試示範。</p><p class="hash"><span>#在家自己測稠度</span><span>#衛教說一次就懂</span></p></div></article>
+        <article class="feat"><div class="feat-img"><img src="assets/feature-records.png" alt="紀錄冊畫面" width="190" height="400" loading="lazy"></div><div class="feat-body"><p class="feat-no"><b>02</b>RECORDS</p><p class="k">紀錄冊</p><h3>每一餐都有紀錄</h3><p>吃了什麼、喝多少水，以及體重、體溫、血壓、血糖。</p><p class="hash"><span>#交班不用口頭說</span><span>#看見居家飲食</span></p></div></article>
+        <article class="feat"><div class="feat-img"><img src="assets/feature-visits.png" alt="安心錄畫面" width="190" height="400" loading="lazy"></div><div class="feat-body"><p class="feat-no"><b>03</b>VISITS</p><p class="k">安心錄</p><h3>醫囑不再忘</h3><p>記下看診院所、醫師與醫囑，回診前通知全家。</p><p class="hash"><span>#醫囑隨時查</span><span>#追蹤一目了然</span></p></div></article>
+        <article class="feat"><div class="feat-img"><img src="assets/feature-team.png" alt="長輩卡畫面" width="190" height="400" loading="lazy"></div><div class="feat-body"><p class="feat-no"><b>04</b>TEAM</p><p class="k">長輩卡</p><h3>照護團隊一致</h3><p>用專屬邀請碼，把家人、看護與醫療人員拉進同一個團隊。</p><p class="hash"><span>#全家同一個等級</span><span>#共享紀錄與照片</span></p></div></article>
       </div>
       <p class="lang-note">介面支援中文、English、Bahasa Indonesia、Filipino、Tiếng Việt 五種語言，大中小字體可切換。</p>
     </div></div>
