@@ -203,8 +203,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .feat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
 .feat { display: grid; grid-template-columns: 22px 1fr; gap: 8px; min-width: 0; }
 .feat-date { writing-mode: vertical-rl; font-family: var(--latin); font-size: calc(13px * var(--fs)); font-weight: 600; letter-spacing: .14em; color: var(--muted); padding-top: 4px; }
-.feat-img { background: linear-gradient(170deg, #FFFFFF 0%, #FAF9F6 55%, #EDEAE4 100%); border: 1px solid #E4E0D8; border-radius: 20px; height: 240px; overflow: hidden; display: flex; justify-content: center; padding-top: 18px; }
-.feat-img img { width: 128px; object-fit: contain; object-position: top; }
+.feat-img { height: 240px; display: flex; justify-content: center; align-items: flex-start; padding-top: 8px; }
+.feat-img img { width: auto; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 20px rgba(28,26,24,.16)); }
 .feat-card { background: var(--white); border: 1px solid var(--hair); border-radius: 10px; padding: 18px 18px 16px; margin: -36px 10px 0; position: relative; }
 .feat-card .k { font-size: calc(12.5px * var(--fs)); font-weight: 700; display: flex; align-items: center; gap: 6px; }
 .feat-card .k::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
